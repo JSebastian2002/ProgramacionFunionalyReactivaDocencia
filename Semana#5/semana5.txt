@@ -1,0 +1,132 @@
+Semana #5
+17:07 7/11/2022
+//Mapeo
+def isEven (k : Int) : Int = (k % 2) match {
+   case 0 =>1
+   case _ =>0
+}
+def countEven( s : List[Int]) : Int = s.map(isEven).sum
+
+def countEven( s : List[Int]) : Int : {
+ def isEven(k: Int): Int = (k % 2) match{
+  case 0 => 1
+  case _ => 0
+  }
+ s.map( isEven).sum
+}
+
+def countEven( s : List[Int]) : Int = {
+ def isEven = (k : Int) => k % 2 match{
+   case 0 => 1
+   case _ => 0
+  {
+ s.map( isEven).sum
+}
+
+//Ejercicios Mapeo
+1.
+
+val names : List[String] = List("Leo", "Cristiano", "Enner", "Felipe")
+names.map(_. length)
+2. 
+
+val numbers = List(3, 4, 7, 11, 12)
+val isPrime = (nro: Int) => (2 to nro - 1).forall( nro % _!= 0)
+numbers.map(isPrime(_) match{
+  case true => 1
+  case flase => 0
+}).sum
+
+
+val numbers = List(6, 28, 15, 11, 24)
+
+numbers.max
+res26: Int = 28
+numbers.min
+res27: Int = 6
+numbers.size
+res28: int = 6
+
+forall y exists
+forall
+def isPrime(nro: Int): Boolean = (2 until nro.forall(nro %_!=0))
+
+se puede usar until o to.
+a to b => a menorigual x menori b
+a until b **
+ exists
+def isPrime(nro: Int):Boolean = !(2 until nro).exis(nro %: ==0)}
+
+
+filtar y truncar secuencias 
+filter
+List(1, 2, 3, 4, 5).filter(=> k % 3 != 0)
+
+takwjhile
+List(1, 2, 3, 4, 5).takeWhile( k => k % 3 != 0)
+res:List[Int]
+
+
+Map/Reduce
+res:List[Int] = List(1, , 4, 5)}
+
+(n : Int) =>(1 until n).filter(div => n % div == 0)
+val sumDiv = (n : Int) => (1 until n).filter(div) falta
+
+val numbers = List(6, 28, 15, 12, 11, 24)
+val sumDiv = (nro : Int) => (1 until nro).filter(div  => nro % Div == 0).sum
+numbers.filter(nro  => nro == sumDiv(nro)).size
+
+
+# perfecto = suma divisores = #
+# deficiente = suma divisores < #
+# abundante = "" > #
+
+
+val dif = (n : Int) =>(1  until n).filter(div => n % div == 0)
+
+// Faactorial escalonado
+
+def factorial(n : Int) : Int = {
+  n % 2 match {
+    case 0  => (2 to n by 2).product
+    case _  => (1 to n by 2).product
+   }
+  factorial(8)
+  factorial(9)
+ }
+
+
+
+val numbers = (1 to 20 ).toList
+
+//Contar Pares
+
+numbers.filter( nro => nro % 2 == 0).size
+numbers.count( nro => nro % 2 == 0 )
+
+//contar impares
+
+numbers.filter( nro => nro % 2 != 0).size
+numbers.count( nro => nro % 2 != 0 )
+
+  //Contar Primos
+  def contarPrimos(nros : List[Int]) : Int = {
+    val isPrimo = (n : Int ) => (2 until n ).forall(n %_ != 0)
+    nros.filter(isPrimo).size
+    // nros.count(isPrime)
+  }
+contarPrimos(numbers)
+
+
+
+def tresFactores(nros: List[Int]): List[Int] = {
+  val factores = (n : Int) => (2 until n).filter(n %_ == 0)
+
+  nros.filter(nro => factores(nro).size== 3)
+
+}
+
+tresFactores((1 to 1000).toList)
+
+
