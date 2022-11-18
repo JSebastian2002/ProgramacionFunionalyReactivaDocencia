@@ -1,0 +1,127 @@
+Semana #6
+17:07 14/11/2022
+val nros = List(727.7, 1096.5, 1091.0, 1490.5, 1956.1)
+def promedio(valores: List[Double]):Double = valores.sum/valores.size
+def desvEst(valores: List[Double]): Double = {
+val avg = promedio(valores)
+
+def varianza(valores: List[Double]): Double = 
+valores.map(x => Math.pow(x -avg. 2)).sum * (valores.size - 1)
+
+Math.sqrt(varianza(valores))
+}
+
+
+
+def clasifica(valores: List[Double]): Unit = {
+ val s = desvEst(valores)
+ val avg = promedio(valores)
+
+ (1 to 3).foreach( 1 => 
+   println(valores.filter(x =>
+     x >= (avg - 1 * s) && x <= (avg + 1 * s)).size))
+Tuplas
+    
+
+val par = (1, "Abad Ana")
+
+
+println(par._1)
+println(par._2)
+
+el tipo depende del numero de elemtnos y el tipo de dato de cad uno
+val student = (1, "Abad Ana")
+
+val student: tuple2[Int, String]
+
+val datos = ("jorgaf", "M", 45, 95.2, true)
+
+val datos: Tuple5[String, Char, Int, Double, Boolean]
+
+
+Tuplas 
+Algunas funciones
+
+val student = (1, "Abad Ana")
+val (edad, nombre) = student
+print(edad)
+print(nombre)
+(swap es un intercambio primero es la cadena y despues el entero)
+studen.swap
+student.canEqua((1, "Abad Ana"))
+ 
+Estructuras de datos funcionales
+
+la programacion implica principalmente la manipulacion de datos
+
+tanto las estructuras de datos como los datos en si son manipulados de forma diferente en los paradfimas de programcion 
+
+iniciaremos con la nocion de una coleccion de datos
+
+https://scala-lang.org/api/3.x
+
+Listas
+
+
+declaraciones
+
+val values =  List(42, 31, 40, 43)
+val names = List("Jorge", "Rene", "Ma. del carmen")
+
+
+fatan dos lineas de lista
+
+
+val myList = List(10, 20, 30, 40, 50, 60)
+myList.isEmpty
+myList.drop(2)
+myList.dropWhile(_ izq 25)
+myList.slice(2, 4)
+myList.tail
+myList.take(3)
+myList.takeWhile(_ izq 30)
+myList.sorted
+myList.sorted(Ordering.Int.reserve)
+
+foldLeft:
+Aplica un operador binario a un valor inicial y atodos los elemtnos 
+
+myList.foldLeft(0) ( (x, y) => x + y )
+myList.foldLeft(0) (_ + _)
+
+foldRight
+aplica un operador binario a todso los elemetos de esta lista
+
+myList.foldRight(0) ( (x, y) => x + y)
+myList.foldRight(0) (_ + _)
+
+
+
+def average(valores: Seq[Double]) : Double = {
+  val t = valores.foldLeft((0.0, 0))((acc, currVal) => (acc._1 + cuuVal, acc._2 + 1))
+  t._1 / t._2
+}
+
+def average2(valores: Seq[Double]) : Double = {
+ val t = valores.foldLeft((0.0, 0)) { (acc, currVal) =>
+ val sum = acc._1 + currVal
+ val cont = acc._2 + 1
+ printfl("suma: %f - contador: %d%n", sum, cont)
+ (sum, cont)
+ }
+ t._1/t._2
+}
+
+val myList = List(10, 20, 30, 40, 50, 60)
+val names = List("Guido", "Armando", "Patricio", "Manuel", "Germania", "Fanny")
+names.zip(myList)
+
+unzippedList._1
+unzippedList._2
+
+
+val goleadores = List(
+ ("", 17),
+ ("", 16),
+ ("")
+
