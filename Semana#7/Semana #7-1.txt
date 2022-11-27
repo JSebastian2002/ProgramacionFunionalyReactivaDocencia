@@ -1,0 +1,150 @@
+Semana #7
+17:07 21/11/2022
+
+val goleadores = List(
+"Francisco  Fydriszewski",10,
+"Joaquin Verges",9,
+"Santiago Giordona",9,
+"Ismael Diaz",8,
+"Tomas Molina",7,
+"Danny Luna",7,
+"Critian Martinez",7,
+"Gabriel Cortez",7,
+"Leonardo Villagra",6,
+"Michael Hoyos",6))
+1.
+val goles = goleadores.map(_._2).map(_.toDouble)
+val average = (values: List[Double]) => values.sum/ values.length
+val avgGol = average(goles)
+2.
+goleadores.maxBy(_._2)._1
+3.
+goleadres.minBy(_._2)._1
+4.
+val foles = goleadores.map(_._2).map(_.toDouble)
+val average = (values: List[Double]) => values.sum/ values.length
+val avgGol = average(goles)
+val maroesAbg = goleadores.filter(_._2 > avgGol).map(_._1)
+5.
+val foles = goleadores.map(_._2).map(_.toDouble)
+val average = (values: List[Double]) => values.sum/ values.length
+val avgGol = average(goles)
+val maroesAbg = goleadores.filter(_._2 < avgGol).map(_._1)
+
+//Conjuntos.
+grupo de valores unicos
+
+val conj2 : Set[Int] = Set()
+val conjunto : Set[Int] = Set(1, 1, 2, 2, 2, 3)
+
+algunas funciones
+
+val conjunto: Set[Int] = Set(1, 2, 3)
+val conNuevo = conjunto + 6
+
+val conjunto: Set[Int] = Set(1,2,3)
+val conNuevo = conjunto.concat(List(2,3,4,5))
+
+val conjunto: Set[Int] = Set(1, 2, 3)
+val conNuevo = conjunto.concat(List(2,3,4,5))
+conNuevo.intersect(conjunto)
+
+//Mapas
+
+tuit
+def ungt.Avereal
+En scala se construyen diccionarios como mapas
+Map[K, V]
+K - representa a la claves
+V- representa a los  valores
+
+//k,v parametros de tipo
+todos los apres deberan tner cadena entera
+Map(("apples", 3), ("oranges", 2), ("pears", 0))
+
+
+Map((1, 2), ("ABC", 100))
+val res0: Map[Matchable, Int] = Map(1 => 2, ABC =>  100 )
+
+Map((1,2), ("ABC", 100.2), (10.10, true))
+val res1: Map[Matchable, Int] = Map(1 => 2, ABC =>  100 => true)
+
+Map("apples" => 3, "oranges" => 2, "pears" => 0)
+si empieza con un strinf todos deber ser strings
+si se empieza en entero todos deber ser enteros
+
+Map(("apples", 3), ("oranges", 2), ("pears", 0))
+metodo toMap = convertir una lista de tuplas en un mapa
+ListMap(("apples", 3), ("oranges", 2), ("pears", 0)).toMap
+
+List((1,2,3), (4,5,6)).toMap mal porque se neseistn 2 tuplas
+
+falta una linea
+
+Map(("apples", 3), ("oranges", 2), ("pears, 0")).toSeq
+Map((""apples => 3, "oranges"=>2, ""pears
+falta codigo
+
+val fruitBasket = Map("apples" => 3, "oranges" => 2, "pears" => 0)
+fruitBasket.map(data => data.match {
+ case(fruit, count) => count * 2 })
+
+collection.immutable.Iterable[Int] = List(6, 4, 0)
+fruitBasket.map{ case(fruit, count) => count * 2}
+dos maneras de esta funcion mismo resultado
+
+
+val fuitBasket = Map("Apples" => 3, "orange" => 2, "pears" => 0)
+
+fruitBasket.map{ case(fruit, count * 2)}
+
+Map[String, Int] = Map("apples" => 6, "pears" => 4, "lemons" => 0)
+fruitBasket.map{ case (fuit, count) => (fruit, count, count * 2)}.map{case (fruit._. count2)=>(fruit, count2 / 2)}.toMap
+
+Map[String, Int] = Map("apples" => 6, )falta una parte de est codigo
+
+filter
+
+val fruitBasket = Map("apples" => 3, "oranges" => 2, )
+
+falta codigo
+
+Group by
+
+reorganizar una secuencia en n mapa donde algunos elemtos de la seucencia origianl se agrupan en subsecuencias.
+
+
+
+Seq("wombat", "xanthan", "Yogurt", "zebra").groupBy => if (s startsWith "y") 1 else 2)
+Map[Int, Seq[String]] = Map(1 => List(yogurt), 2 => List(wombat, xanthan, zebra))
+
+
+el argumento del metodo groupBy es una funcion que calcula el key de cada elemento secuencia
+
+cual es la salida de este codigo
+
+List(1, 2, 3, 4, 5).groupBy( k => % 3)
+
+Map[Int, List[Int]] = HasMap(0 => List(3), 1 => List(1, 4), 2 => List(2, 5))
+
+
+
+val goleadores = List(
+  "Francisco  Fydriszewski",10,
+  "Joaquin Verges",9,
+  "Santiago Giordona",9,
+  "Ismael Diaz",8,
+  "Tomas Molina",7,
+  "Danny Luna",7,
+  "Critian Martinez",7,
+  "Gabriel Cortez",7,
+  "Leonardo Villagra",6,
+  "Michael Hoyos",6))
+
+goleadores.groupBy{ case(_, goals) => goals}
+goleadores.groupBy(row => row match){
+  case (_, goals) => goals
+}).map(row =>row match) {
+  case(goles, List) => (goles, List.size)
+    
+}).toList.sortBy(_._2)
